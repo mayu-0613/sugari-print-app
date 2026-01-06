@@ -3,9 +3,14 @@ import "./App.css";
 import PrintView from "./PrintView";
 
 const API_URL = import.meta.env.VITE_GAS_API_URL;
-if (!API_URL) {
-  return <div style={{ padding: 20 }}>VITE_GAS_API_URL が未設定です（.env または Netlify環境変数）</div>;
-}
+  // ✅ ここならreturnできる（コンポーネント内）
+  if (!API_URL) {
+    return (
+      <div style={{ padding: 20 }}>
+        VITE_GAS_API_URL が未設定です（.env または Netlify環境変数）
+      </div>
+    );
+  }
 
 
 export default function App() {
