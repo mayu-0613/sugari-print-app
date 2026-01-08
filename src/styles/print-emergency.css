@@ -1,0 +1,22 @@
+.emergency-box {
+  border: 2px solid #222;
+  padding: 6px 8px;
+  min-width: 220px;
+}
+
+.emergency-label {
+  font-size: 11px;
+  margin-bottom: 4px;
+}
+
+.emergency-phone {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+@media print {
+  .emergency-box {
+    border-width: 3px;
+  }
+}

@@ -1,0 +1,62 @@
+/* ===============================
+   印刷ページのベース設定
+   =============================== */
+
+.print-page {
+  background: white;
+  padding: 10px;            /* 余白を少し詰める */
+  border: 1px solid #ddd;
+  font-size: 13px;          /* 全体の基準文字サイズを底上げ */
+}
+
+/* タイトル */
+.print-title {
+  margin: 0 0 6px 0;        /* 下余白を詰める */
+  font-size: 20px;          /* 見出しはしっかり */
+  font-weight: 700;
+}
+
+/* ===============================
+   印刷時の共通最適化
+   =============================== */
+@media print {
+
+  /* 画面用UIは非表示 */
+  .controls,
+  .top {
+    display: none;
+  }
+
+  /* 印刷時は枠・余白を削る */
+  .print-page {
+    border: none;
+    padding: 0;
+  }
+
+  /* A4固定 */
+  @page {
+    size: A4;
+    margin: 10mm;
+  }
+
+  /* 印刷時はわずかに小さくして1枚に収めやすく */
+  body {
+    font-size: 12.5px;
+    margin: 0; /* ←追加 */
+  }
+
+  /* 印刷時：中央寄せ防止（上寄せ） */
+  .container {
+    margin: 0 !important;      /* ←追加 */
+    padding-top: 0 !important; /* ←追加 */
+  }
+
+  /* セクション間の余白も少し詰める */
+  .section {
+    margin-top: 6px;
+  }
+}
+
+@media print {
+  html { margin: 0; padding: 0; }
+}
